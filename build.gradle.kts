@@ -6,8 +6,6 @@ plugins {
 	kotlin("plugin.spring") version "1.9.25"
 	id("org.springframework.boot") version "3.4.2"
 	id("io.spring.dependency-management") version "1.1.7"
-	kotlin("plugin.jpa") version "1.9.25"
-    id("org.liquibase.gradle") version "3.0.1"
 }
 
 group = "soat7.group61"
@@ -21,7 +19,7 @@ java {
 
 buildscript {
     dependencies {
-        classpath("org.liquibase:liquibase-core:4.+")
+
     }
 }
 
@@ -38,12 +36,9 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.liquibase:liquibase-core:4.+")
-    implementation("org.postgresql:postgresql:42.7.+")
 	implementation("com.mailersend:java-sdk:1.0.0")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
@@ -59,23 +54,7 @@ kotlin {
 }
 
 configurations {
-    liquibaseRuntime {
-        extendsFrom(configurations.compileClasspath.get())
-    }
-}
 
-liquibase {
-    this.activities.register("update") {
-        this.arguments = mapOf(
-            "changelogFile" to "/db/changelog/master.xml",
-            "searchPath" to sourceSets.main.get().resources.srcDirs.first(),
-            "url" to props["DATABASE_URL"],
-            "username" to props["DATABASE_USER"],
-            "password" to props["DATABASE_PASSWORD"],
-            "logLevel" to "debug"
-        )
-    }
-    runList = "update"
 }
 
 allOpen {

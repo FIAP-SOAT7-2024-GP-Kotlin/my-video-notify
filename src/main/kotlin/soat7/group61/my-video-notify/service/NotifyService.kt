@@ -1,4 +1,4 @@
-package soat7.group61.my_notify.service
+package soat7.group61.`my-video-notify`.service
 
 import com.mailersend.sdk.MailerSend
 import com.mailersend.sdk.MailerSendResponse
