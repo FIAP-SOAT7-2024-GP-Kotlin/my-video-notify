@@ -1,5 +1,5 @@
 spring:
-  application.name: my-video-notify
+  application.name: myvideonotify
   config:
     import: optional:file:.env[.properties]
   jackson:

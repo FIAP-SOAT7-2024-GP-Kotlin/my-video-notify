@@ -1,1 +1,1 @@
-rootProject.name = "my-video-notify"
+rootProject.name = "myvideonotify"
