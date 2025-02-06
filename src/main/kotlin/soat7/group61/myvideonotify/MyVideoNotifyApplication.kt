@@ -1,4 +1,4 @@
-package soat7.group61.`my-video-notify`
+package soat7.group61.myvideonotify
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

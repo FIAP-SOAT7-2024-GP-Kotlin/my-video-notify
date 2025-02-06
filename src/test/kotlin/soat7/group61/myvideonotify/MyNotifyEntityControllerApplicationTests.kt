@@ -1,4 +1,4 @@
-package soat7.group61.`my-video-notify`
+package soat7.group61.myvideonotify
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

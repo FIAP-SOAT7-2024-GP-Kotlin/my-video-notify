@@ -1,4 +1,4 @@
-package soat7.group61.`my-video-notify`.domain.enum
+package soat7.group61.myvideonotify.domain.enum
 
 enum class NotifyType() {
     EMAIL,
