@@ -1,5 +1,9 @@
+info:
+  project:
+    name: my-video-notify
+
 spring:
-  application.name: myvideonotify
+  application.name: my-video-notify
   config:
     import: optional:file:.env[.properties]
   jackson:
@@ -17,6 +21,10 @@ third-party:
     url: "https://api.myvideofunction.com"
     timeout: 5000
 
+nats:
+  spring:
+    server: ${NATS_SERVERS:nats://localhost:4222}
+
 springdoc:
   version: '@springdoc.version@'
   swagger-ui:
@@ -25,6 +33,12 @@ springdoc:
     operationsSorter: alpha
     writer-with-order-by-keys: true
   path: /api/v1/swagger-ui/index.html
+
+messaging:
+  topics:
+    video-completed: video.completed
+    video-error: video.error
+  group: video-manager
 
 logging:
   level:
