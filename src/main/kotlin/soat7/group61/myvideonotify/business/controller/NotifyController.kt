@@ -17,7 +17,7 @@ class NotifyController(
     suspend fun sayHello(): ResponseEntity<String> {
         val email = Email()
 
-        email.setFrom("My Vídeo", "fiapmyburguer@gmail.com")
+        email.setFrom("My Video", "fiapmyburguer@gmail.com")
         email.addRecipient("User", "alssantos.482@gmail.com")
         email.setSubject("Fail to process [TESTE]")
         email.setPlain("The process of TESTE must be failed!")

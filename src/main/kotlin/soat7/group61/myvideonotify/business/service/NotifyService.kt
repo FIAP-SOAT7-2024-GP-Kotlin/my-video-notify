@@ -6,11 +6,20 @@ import com.mailersend.sdk.emails.Email
 import com.mailersend.sdk.exceptions.MailerSendException
 import mu.KLogging
 import org.springframework.stereotype.Service
+import soat7.group61.myvideonotify.config.MailerSendProperties
 
 @Service
-class NotifyService {
+class NotifyService(
+    private val properties: MailerSendProperties
+) {
 
     private companion object : KLogging()
+
+    private val mailerSend: MailerSend = MailerSend()
+
+    init {
+        mailerSend.setToken(properties.apiKey)
+    }
 
     suspend fun sendEmail(email: Email) = try {
         val ms = MailerSend()

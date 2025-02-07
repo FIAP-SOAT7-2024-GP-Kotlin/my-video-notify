@@ -40,6 +40,11 @@ messaging:
     video-error: video.error
   group: video-manager
 
+mailersend:
+  api-key: "mlsn.c1ddccb6d8f0ab9432fb7769d2eebfcb3deac83a0eb17b71088412f9a1e3587b"
+  from-email: "fiapmyburguer@gmail.com"
+  from-name: "My Video"
+
 logging:
   level:
     org:
