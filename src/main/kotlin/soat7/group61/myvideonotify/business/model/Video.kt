@@ -10,7 +10,7 @@ data class Video(
     val name: String,
     val status: VideoStatus,
     val createdAt: Instant,
-    val updatedAt: Instant,
+    val updatedAt: Instant? = null,
     val metadata: Map<String, Any>? = emptyMap(),
     val inputPath: String,
     val outputPath: String? = null
