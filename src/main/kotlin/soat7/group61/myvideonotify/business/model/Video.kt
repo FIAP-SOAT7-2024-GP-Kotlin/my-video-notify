@@ -1,5 +1,6 @@
 package soat7.group61.myvideonotify.business.model
 
+import com.mailersend.sdk.emails.Email
 import soat7.group61.myvideonotify.business.enum.VideoStatus
 import java.time.Instant
 import java.util.UUID
