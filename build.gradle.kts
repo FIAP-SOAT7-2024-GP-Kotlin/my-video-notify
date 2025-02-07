@@ -11,10 +11,10 @@ val log4j2Version: String by ext
 val jacksonVersion: String by ext
 
 plugins {
-	kotlin("jvm") version "1.9.25"
-	kotlin("plugin.spring") version "1.9.25"
-	id("org.springframework.boot") version "3.4.2"
-	id("io.spring.dependency-management") version "1.1.7"
+    kotlin("jvm") version "1.9.25"
+    kotlin("plugin.spring") version "1.9.25"
+    id("org.springframework.boot") version "3.4.2"
+    id("io.spring.dependency-management") version "1.1.7"
     id("org.jlleitschuh.gradle.ktlint") version "11.3.1"
     jacoco
 }
@@ -23,9 +23,9 @@ group = "soat7.group61.myvideonotify"
 version = "0.0.1-SNAPSHOT"
 
 java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(21)
-	}
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
     sourceCompatibility = JavaVersion.VERSION_21
     targetCompatibility = JavaVersion.VERSION_21
 }
@@ -46,7 +46,7 @@ apply {
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 extra["springCloudVersion"] = "2024.0.0"
@@ -70,8 +70,6 @@ dependencyManagement {
 
     dependencies {
         dependency("io.github.microutils:kotlin-logging:$kotlinLoggingVersion")
-
-
     }
 }
 
@@ -81,33 +79,37 @@ ext["log4j2.version"] = log4j2Version
 ext["jackson-bom.version"] = jacksonVersion
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	implementation("com.mailersend:java-sdk:1.0.0")
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("com.mailersend:java-sdk:1.0.0")
     implementation("io.nats:nats-spring-boot-starter:0.6.0-3.1")
     implementation("io.github.microutils:kotlin-logging")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-slf4j")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 
-	developmentOnly("org.springframework.boot:spring-boot-devtools")
+    // Jackson
+    implementation("com.fasterxml.jackson.core:jackson-core")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jdk8")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-
 }
 
 kotlin {
-	compilerOptions {
-		freeCompilerArgs.addAll("-Xjsr305=strict")
-	}
+    compilerOptions {
+        freeCompilerArgs.addAll("-Xjsr305=strict")
+    }
 }
 
 configurations {
-
 }
 
 tasks {

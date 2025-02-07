@@ -7,9 +7,8 @@ import kotlin.test.assertEquals
 @SpringBootTest
 class MyNotifyEntityControllerApplicationTests {
 
-	@Test
-	fun contextLoads() {
-        assertEquals(1,1)
-	}
-
+    @Test
+    fun contextLoads() {
+        assertEquals(1, 1)
+    }
 }

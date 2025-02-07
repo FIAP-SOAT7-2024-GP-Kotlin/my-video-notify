@@ -17,5 +17,4 @@ enum class NotifyStatus {
             else -> throw IllegalArgumentException("Invalid NotifyStatus value: $value")
         }
     }
-
 }

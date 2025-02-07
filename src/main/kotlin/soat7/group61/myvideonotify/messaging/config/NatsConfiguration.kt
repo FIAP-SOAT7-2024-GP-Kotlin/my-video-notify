@@ -1,7 +1,7 @@
 package soat7.group61.myvideonotify.messaging.config
 
-import io.nats.client.Nats
 import io.nats.client.Connection
+import io.nats.client.Nats
 import mu.KotlinLogging
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

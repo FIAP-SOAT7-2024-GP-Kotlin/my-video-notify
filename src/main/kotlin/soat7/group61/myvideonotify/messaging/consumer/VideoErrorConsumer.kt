@@ -2,15 +2,14 @@ package soat7.group61.myvideonotify.messaging.consumer
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import jakarta.annotation.PostConstruct
 import io.nats.client.Message
+import jakarta.annotation.PostConstruct
 import kotlinx.coroutines.runBlocking
 import mu.KLogging
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 import soat7.group61.myvideonotify.business.handler.VideoErrorHandler
 import soat7.group61.myvideonotify.business.model.Video
-
 import io.nats.client.Connection as NatsConnection
 
 @Component
@@ -19,7 +18,7 @@ class VideoErrorConsumer(
     @Value("\${messaging.group}") private val group: String,
     private val natsConnection: NatsConnection,
     private val objectMapper: ObjectMapper,
-    private val videoErrorHandler: VideoErrorHandler,
+    private val videoErrorHandler: VideoErrorHandler
 ) {
     private companion object : KLogging()
 
