@@ -51,7 +51,7 @@ repositories {
 
 extra["springCloudVersion"] = "2024.0.0"
 
-//configurations {
+// configurations {
 //    all {
 //        exclude(group = "org.springframework.boot", module = "spring-boot-starter-logging")
 //        exclude(group = "ch.qos.logback", module = "logback-classic")
@@ -59,7 +59,7 @@ extra["springCloudVersion"] = "2024.0.0"
 //        exclude(group = "io.arrow-kt", module = "arrow-core-extensions")
 //        exclude(group = "io.projectreactor.netty", module = "reactor-netty-http-brave")
 //    }
-//}
+// }
 
 dependencyManagement {
     imports {
