@@ -9,6 +9,8 @@ val kotlinxCoroutinesVersion: String by ext
 val kotlinVersion: String by ext
 val log4j2Version: String by ext
 val jacksonVersion: String by ext
+val mockkVersion: String by ext
+val mockServerClientJavaVersions: String by ext
 
 plugins {
     kotlin("jvm") version "1.9.25"
@@ -70,6 +72,7 @@ dependencyManagement {
 
     dependencies {
         dependency("io.github.microutils:kotlin-logging:$kotlinLoggingVersion")
+        dependency("io.mockk:mockk:$mockkVersion")
     }
 }
 
@@ -99,6 +102,9 @@ dependencies {
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-debug")
+    testImplementation("io.mockk:mockk")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
