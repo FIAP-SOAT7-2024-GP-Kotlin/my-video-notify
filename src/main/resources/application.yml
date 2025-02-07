@@ -11,6 +11,12 @@ spring:
       write_dates_as_timestamps: false
     property-naming-strategy: SNAKE_CASE
 
+third-party:
+  my-video-function:
+    api-key: "SUA_CHAVE_API"
+    url: "https://api.myvideofunction.com"
+    timeout: 5000
+
 springdoc:
   version: '@springdoc.version@'
   swagger-ui:
@@ -28,4 +34,4 @@ logging:
     io:
       github:
         soat7:
-          myburguercontrol: ${LOG_LEVEL:DEBUG}
+          myvideonotify: ${LOG_LEVEL:DEBUG}

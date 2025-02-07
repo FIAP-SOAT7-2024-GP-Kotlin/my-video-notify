@@ -51,15 +51,15 @@ repositories {
 
 extra["springCloudVersion"] = "2024.0.0"
 
-configurations {
-    all {
-        exclude(group = "org.springframework.boot", module = "spring-boot-starter-logging")
-        exclude(group = "ch.qos.logback", module = "logback-classic")
-        exclude(group = "org.apache.logging.log4j", module = "log4j-to-slf4j")
-        exclude(group = "io.arrow-kt", module = "arrow-core-extensions")
-        exclude(group = "io.projectreactor.netty", module = "reactor-netty-http-brave")
-    }
-}
+//configurations {
+//    all {
+//        exclude(group = "org.springframework.boot", module = "spring-boot-starter-logging")
+//        exclude(group = "ch.qos.logback", module = "logback-classic")
+//        exclude(group = "org.apache.logging.log4j", module = "log4j-to-slf4j")
+//        exclude(group = "io.arrow-kt", module = "arrow-core-extensions")
+//        exclude(group = "io.projectreactor.netty", module = "reactor-netty-http-brave")
+//    }
+//}
 
 dependencyManagement {
     imports {
@@ -107,9 +107,6 @@ kotlin {
     compilerOptions {
         freeCompilerArgs.addAll("-Xjsr305=strict")
     }
-}
-
-configurations {
 }
 
 tasks {
