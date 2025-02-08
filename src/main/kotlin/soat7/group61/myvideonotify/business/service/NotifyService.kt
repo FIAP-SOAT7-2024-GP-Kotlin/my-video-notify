@@ -18,12 +18,12 @@ class NotifyService(
     private val mailerSend: MailerSend = MailerSend()
 
     init {
-        mailerSend.setToken(properties.apiKey)
+        mailerSend.token = properties.apiKey
     }
 
     suspend fun sendEmail(email: Email) = try {
         val ms = MailerSend()
-        email.setFrom("My-Video", "fiapmyburguer@gmail.com")
+        email.setFrom(properties.fromName, properties.fromEmail)
         logger.info { "Sending email notification: ${email.subject}" }
 
         val response: MailerSendResponse = ms.emails().send(email)
