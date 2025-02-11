@@ -6,12 +6,11 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import soat7.group61.myvideonotify.business.service.NotifyService
-import soat7.group61.myvideonotify.config.MailerSendProperties
 
 @RestController
 @RequestMapping("/notify")
 class NotifyController(
-    private val notifyService: NotifyService,
+    private val notifyService: NotifyService
 ) {
 
     @PostMapping("/hello")
